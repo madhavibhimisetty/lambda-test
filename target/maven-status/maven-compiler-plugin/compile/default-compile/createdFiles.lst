@@ -1,0 +1,6 @@
+com/omniwyse/tenant/config/TenanatDataSource.class
+com/omniwyse/tenant/config/MultiTenantSchemaConnectionProvider.class
+com/omniwyse/tenant/config/Emp.class
+com/omniwyse/tenant/config/Test.class
+com/omniwyse/tenant/config/SessionFactoryUtil.class
+com/omniwyse/tenant/App.class
