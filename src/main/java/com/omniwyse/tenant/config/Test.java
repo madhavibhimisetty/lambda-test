@@ -15,10 +15,10 @@ import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 
 public class Test {
-	 public String handleRequest(S3EventNotification input, Context context) {
+//	 public String handleRequest(S3EventNotification input, Context context) {
 
-	//public static void main(String[] args) throws SQLException {
-		String query = "select * from cdta.employee where eno=(select max(eno) from employee)";
+	public static void main(String[] args) throws SQLException {
+		String query = "select * from emp where eno=(select max(eno) from emp)";
 		MongoClient mongo = new MongoClient("ec2-100-24-6-87.compute-1.amazonaws.com", 27017);
 		DB db = mongo.getDB("testdb");
 		DBCollection table = db.getCollection("user");
@@ -27,8 +27,8 @@ public class Test {
 		Session session=null;
 		while (cursor.hasNext()) {
 			Emp emp = new Emp();
-			emp.setEno(6);
-			emp.setName("madhu");
+			emp.setEno(1);
+			emp.setName("a");
 			session = SessionFactoryUtil.getSessionFactory().withOptions()
 					.tenantIdentifier((String) cursor.next().get("tenant")).openSession();
 			session.getTransaction().begin();
@@ -51,7 +51,7 @@ public class Test {
 
 		}
 
-		 return "Successfull";
+//		 return "Successfull";
 
 	}
 }
