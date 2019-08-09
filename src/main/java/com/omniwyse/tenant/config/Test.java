@@ -19,7 +19,7 @@ public class Test {
 
 	//public static void main(String[] args) throws SQLException {
 		String query = "select * from emp where eno=(select max(eno) from emp)";
-		MongoClient mongo = new MongoClient("ec2-100-24-6-87.compute-1.amazonaws.com", 27017);
+		MongoClient mongo = new MongoClient("ec2-3-95-158-0.compute-1.amazonaws.com", 27017);
 		DB db = mongo.getDB("testdb");
 		DBCollection table = db.getCollection("user");
 
